@@ -2,9 +2,9 @@
 
 namespace Ariaieboy\LaravelSafeBrowsing;
 
+use Ariaieboy\LaravelSafeBrowsing\Commands\LaravelSafeBrowsingCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Ariaieboy\LaravelSafeBrowsing\Commands\LaravelSafeBrowsingCommand;
 
 class LaravelSafeBrowsingServiceProvider extends PackageServiceProvider
 {
