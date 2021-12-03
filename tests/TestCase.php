@@ -2,9 +2,9 @@
 
 namespace Ariaieboy\LaravelSafeBrowsing\Tests;
 
+use Ariaieboy\LaravelSafeBrowsing\LaravelSafeBrowsingServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Ariaieboy\LaravelSafeBrowsing\LaravelSafeBrowsingServiceProvider;
 
 class TestCase extends Orchestra
 {
