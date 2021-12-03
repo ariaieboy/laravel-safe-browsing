@@ -10,7 +10,7 @@
 # this package is under development don't use it (yet)
 
 ---
-Using this Repo you can add google safe browsing api to your laravel application.
+Using this LaravelSafeBrowsing Package you can add google safe browsing api (v4) to your laravel application.
 
 in applications that users generates the content of the website, It's necessary to check if the content is safe or not.
 
