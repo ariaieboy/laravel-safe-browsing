@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ariaieboy\LaravelSafeBrowsing\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelSafeBrowsingCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-safe-browsing';
 
     public $description = 'My command';
 

@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "ariaieboy/laravel-safe-browsing",
+    "description": "Google Safe Browsing API Integration for LARAVEL",
     "keywords": [
-        ":vendor_name",
+        "ariaieboy",
         "laravel",
-        ":package_slug"
+        "laravel-safe-browsing"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/ariaieboy/laravel-safe-browsing",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "AriaieBOY",
+            "email": "smr.seddighy@gmail.com",
             "role": "Developer"
         }
     ],
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Ariaieboy\\LaravelSafeBrowsing\\": "src",
+            "Ariaieboy\\LaravelSafeBrowsing\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Ariaieboy\\LaravelSafeBrowsing\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Ariaieboy\\LaravelSafeBrowsing\\LaravelSafeBrowsingServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelSafeBrowsing": "Ariaieboy\\LaravelSafeBrowsing\\Facades\\LaravelSafeBrowsing"
             }
         }
     },
