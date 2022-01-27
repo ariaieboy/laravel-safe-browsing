@@ -1,8 +1,9 @@
 <?php
+
 // config for Ariaieboy/LaravelSafeBrowsing
 return [
     'google'=>[
-        'api_key'=>env('SAFEBROWSING_GOOGLE_API_KEY',null),
+        'api_key'=>env('SAFEBROWSING_GOOGLE_API_KEY', null),
         'timeout'=>30,
         'threatTypes' => [
             'THREAT_TYPE_UNSPECIFIED',
@@ -13,9 +14,9 @@ return [
         ],
 
         'threatPlatforms' => [
-            'ANY_PLATFORM'
+            'ANY_PLATFORM',
         ],
         'clientId' => 'ariaieboy-safebrowsing',
         'clientVersion' => '0.1.0',
-    ]
+    ],
 ];
