@@ -60,10 +60,10 @@ return [
     ]
 ];
 
-Set the api_key in your config file or using ENV `SAFEBROWSING_GOOGLE_API_KEY`
+
 
 ```
-
+Set the api_key in your config file or using ENV `SAFEBROWSING_GOOGLE_API_KEY`
 ## Usage
 
 ```php
