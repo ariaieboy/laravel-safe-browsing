@@ -27,30 +27,35 @@ class LaravelSafeBrowsing
     public function setApiKey(string $apiKey): self
     {
         $this->apiKey = $apiKey;
+
         return $this;
     }
 
     public function setClientId(string $clientId): self
     {
         $this->clientId = $clientId;
+
         return $this;
     }
 
     public function setClientVersion(string $clientVersion): self
     {
         $this->clientVersion = $clientVersion;
+
         return $this;
     }
 
     public function setThreatTypes(array $threatTypes): self
     {
         $this->threatTypes = $threatTypes;
+
         return $this;
     }
 
     public function setPlatformTypes(array $platformTypes): self
     {
         $this->platformTypes = $platformTypes;
+
         return $this;
     }
 
@@ -69,8 +74,10 @@ class LaravelSafeBrowsing
                     }
                 }
             }
+
             return false;
         }
+
         return true;
     }
 
