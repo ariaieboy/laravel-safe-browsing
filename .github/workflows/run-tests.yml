@@ -41,5 +41,5 @@ jobs:
 
       - name: Execute tests
         env:
-          SAFEBROWSING_GOOGLE_API_KEY: ${{secret.SAFEBROWSING_GOOGLE_API_KEY}}
+          SAFEBROWSING_GOOGLE_API_KEY: ${{ secrets.SAFEBROWSING_GOOGLE_API_KEY }}
         run: vendor/bin/pest
