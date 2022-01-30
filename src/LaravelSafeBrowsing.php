@@ -18,4 +18,8 @@ class LaravelSafeBrowsing
         $this->threatTypes = config('laravel-safe-browsing.google.threatTypes');
         $this->platformTypes = config('laravel-safe-browsing.google.threatPlatforms');
     }
+
+    protected function getApiResult(string $url)
+    {
+    }
 }

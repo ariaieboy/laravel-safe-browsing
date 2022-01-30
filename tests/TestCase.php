@@ -3,10 +3,10 @@
 namespace Ariaieboy\LaravelSafeBrowsing\Tests;
 
 use Ariaieboy\LaravelSafeBrowsing\LaravelSafeBrowsingServiceProvider;
+use GrahamCampbell\TestBench\AbstractAppTestCase;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 
-class TestCase extends Orchestra
+class TestCase extends AbstractAppTestCase
 {
     protected function setUp(): void
     {
