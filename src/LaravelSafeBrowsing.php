@@ -38,16 +38,17 @@ class LaravelSafeBrowsing
                     }
                 }
             }
+
             return false;
         }
+
         return true;
     }
 
     /**
      * @throws \Exception
      */
-    protected
-    function getApiResult(string $url): array|string
+    protected function getApiResult(string $url): array|string
     {
         $lookupUrl = sprintf("https://safebrowsing.googleapis.com/v4/threatMatches:find?key=%s", $this->apiKey);
         $lookupData = [
@@ -70,6 +71,7 @@ class LaravelSafeBrowsing
         if ($response->failed()) {
             throw new \Exception($response->json('error.message'));
         }
+
         return $response->json();
     }
 }
