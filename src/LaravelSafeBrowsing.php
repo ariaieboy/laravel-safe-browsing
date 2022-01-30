@@ -21,6 +21,5 @@ class LaravelSafeBrowsing
 
     protected function getApiResult(string $url)
     {
-
     }
 }
