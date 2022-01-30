@@ -36,4 +36,8 @@
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="SAFEBROWSING_GOOGLE_API_KEY" value="your_api_key"/>
+    </php>
 </phpunit>

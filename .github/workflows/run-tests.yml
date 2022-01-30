@@ -40,4 +40,6 @@ jobs:
           composer update --prefer-dist --no-interaction
 
       - name: Execute tests
+        env:
+          SAFEBROWSING_GOOGLE_API_KEY: ${{secret.SAFEBROWSING_GOOGLE_API_KEY}}
         run: vendor/bin/pest
