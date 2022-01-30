@@ -59,6 +59,9 @@ return [
         'clientVersion' => '0.1.0',
     ]
 ];
+
+Set the api_key in your config file or using ENV `SAFEBROWSING_GOOGLE_API_KEY`
+
 ```
 
 ## Usage
