@@ -56,7 +56,7 @@ return [
             'ANY_PLATFORM'
         ],
         'clientId' => 'ariaieboy-safebrowsing',
-        'clientVersion' => '0.1.0',
+        'clientVersion' => '1.0.0',
     ]
 ];
 
