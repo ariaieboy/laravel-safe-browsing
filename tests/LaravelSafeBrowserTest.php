@@ -17,3 +17,19 @@ it('can return threatTypes', function () {
     $result = LaravelSafeBrowsing::isSafeUrl('http://malware.testing.google.test/testing/malware/', true);
     $this->assertContains($result, ['MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE']);
 });
+it('can determine safe URL', function () {
+    $result = LaravelSafeBrowsing::isSafeUrl('https://google.com', true);
+    $this->assertTrue($result);
+});
+it('can change configuration on the fly', function () {
+    $api = LaravelSafeBrowsing::setApiKey('test_key');
+    $this->assertEquals('test_key', $api->getApiKey());
+    $api = $api->setClientId('test_client_id');
+    $this->assertEquals('test_client_id', $api->getClientId());
+    $api = $api->setClientVersion('test_client_version');
+    $this->assertEquals('test_client_version', $api->getClientVersion());
+    $api = $api->setThreatTypes(['TEST']);
+    $this->assertEquals(['TEST'], $api->getThreatTypes());
+    $api = $api->setPlatformTypes(['TEST']);
+    $this->assertEquals(['TEST'], $api->getPlatformTypes());
+});

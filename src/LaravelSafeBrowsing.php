@@ -22,13 +22,44 @@ class LaravelSafeBrowsing
         $this->clientVersion = config('laravel-safe-browsing.google.clientVersion');
         $this->threatTypes = config('laravel-safe-browsing.google.threatTypes');
         $this->platformTypes = config('laravel-safe-browsing.google.threatPlatforms');
-        if (is_null($this->apiKey) or empty($this->apiKey)) {
-            throw new \Exception('API Key is required');
-        }
     }
 
+    public function setApiKey(string $apiKey): self
+    {
+        $this->apiKey = $apiKey;
+        return $this;
+    }
+
+    public function setClientId(string $clientId): self
+    {
+        $this->clientId = $clientId;
+        return $this;
+    }
+
+    public function setClientVersion(string $clientVersion): self
+    {
+        $this->clientVersion = $clientVersion;
+        return $this;
+    }
+
+    public function setThreatTypes(array $threatTypes): self
+    {
+        $this->threatTypes = $threatTypes;
+        return $this;
+    }
+
+    public function setPlatformTypes(array $platformTypes): self
+    {
+        $this->platformTypes = $platformTypes;
+        return $this;
+    }
+
+    /**
+     * @throws \Exception
+     */
     public function isSafeUrl(string $url, bool $returnType = false): bool|string
     {
+        $this->checkApiKey();
         $result = $this->getApiResult($url);
         if (is_array($result) and isset($result['matches'])) {
             if ($returnType) {
@@ -38,11 +69,16 @@ class LaravelSafeBrowsing
                     }
                 }
             }
-
             return false;
         }
-
         return true;
+    }
+
+    protected function checkApiKey(): void
+    {
+        if (is_null($this->apiKey) or empty($this->apiKey)) {
+            throw new \Exception('API Key is required');
+        }
     }
 
     /**
@@ -73,5 +109,30 @@ class LaravelSafeBrowsing
         }
 
         return $response->json();
+    }
+
+    public function getApiKey(): ?string
+    {
+        return $this->apiKey;
+    }
+
+    public function getClientId(): ?string
+    {
+        return $this->clientId;
+    }
+
+    public function getClientVersion(): ?string
+    {
+        return $this->clientVersion;
+    }
+
+    public function getThreatTypes(): ?array
+    {
+        return $this->threatTypes;
+    }
+
+    public function getPlatformTypes(): ?array
+    {
+        return $this->platformTypes;
     }
 }
