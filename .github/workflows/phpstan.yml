@@ -3,13 +3,14 @@ name: PHPStan
 on:
   push:
     paths:
-      - '**.php'
+      - 'src/**/**.php'
       - 'phpstan.neon.dist'
 
 jobs:
   phpstan:
     name: phpstan
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'wip')"
     steps:
       - uses: actions/checkout@v2
 

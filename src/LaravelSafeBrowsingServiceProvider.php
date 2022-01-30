@@ -2,12 +2,18 @@
 
 namespace Ariaieboy\LaravelSafeBrowsing;
 
-use Ariaieboy\LaravelSafeBrowsing\Commands\LaravelSafeBrowsingCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class LaravelSafeBrowsingServiceProvider extends PackageServiceProvider
 {
+    public function packageRegistered(): void
+    {
+        $this->app->bind('laravel-safe-browsing', function () {
+            return new LaravelSafeBrowsing();
+        });
+    }
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -17,9 +23,6 @@ class LaravelSafeBrowsingServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-safe-browsing')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-safe-browsing_table')
-            ->hasCommand(LaravelSafeBrowsingCommand::class);
+            ->hasConfigFile('laravel-safe-browsing');
     }
 }

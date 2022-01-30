@@ -5,9 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/ariaieboy/laravel-safe-browsing/Check%20&%20fix%20styling?label=code%20style)](https://github.com/ariaieboy/laravel-safe-browsing/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ariaieboy/laravel-safe-browsing.svg?style=flat-square)](https://packagist.org/packages/ariaieboy/laravel-safe-browsing)
 
----
-
-# this package is under development don't use it (yet)
 
 ---
 Using this LaravelSafeBrowsing Package you can add google safe browsing api (v4) to your laravel application.
@@ -24,31 +21,65 @@ You can install the package via composer:
 composer require ariaieboy/laravel-safe-browsing
 ```
 
-You can publish and run the migrations with:
+[//]: # (You can publish and run the migrations with:)
 
-```bash
-php artisan vendor:publish --tag="laravel-safe-browsing_without_prefix-migrations"
-php artisan migrate
-```
+[//]: # ()
+[//]: # (```bash)
+
+[//]: # (php artisan vendor:publish --tag="laravel-safe-browsing_without_prefix-migrations")
+
+[//]: # (php artisan migrate)
+
+[//]: # (```)
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --tag="laravel-safe-browsing_without_prefix-config"
+php artisan vendor:publish --tag="laravel-safe-browsing"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    'google'=>[
+        'api_key'=>env('SAFEBROWSING_GOOGLE_API_KEY',null),
+        'timeout'=>30,
+        'threatTypes' => [
+            'THREAT_TYPE_UNSPECIFIED',
+            'MALWARE',
+            'SOCIAL_ENGINEERING',
+            'UNWANTED_SOFTWARE',
+            'POTENTIALLY_HARMFUL_APPLICATION',
+        ],
+
+        'threatPlatforms' => [
+            'ANY_PLATFORM'
+        ],
+        'clientId' => 'ariaieboy-safebrowsing',
+        'clientVersion' => '1.0.0',
+    ]
 ];
+
+Set the api_key in your config file or using ENV `SAFEBROWSING_GOOGLE_API_KEY`
+
 ```
 
 ## Usage
 
 ```php
-$laravel-safe-browsing = new Ariaieboy\LaravelSafeBrowsing();
-echo $laravel-safe-browsing->echoPhrase('Hello, Ariaieboy!');
+    $result = LaravelSafeBrowsing::isSafeUrl('http://malware.testing.google.test/testing/malware/',true);
+    // Return: (string) MALWARE
 ```
+the first argument is the url that you want to check, the second argument is an optional boolean.
+if you don't pass the second argument or pass false the function will return true if the url is safe or false if it is not safe.
+if you pass true the function will return the threat type that is not safe. if the url is safe it will return true.
+
+
+# TODO
+- [ ] add middleware to check if the url is safe
+- [ ] add verification rules to check if the url is safe
+- [ ] add caching mechanism using update api
+
 
 ## Testing
 

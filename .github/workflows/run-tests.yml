@@ -9,11 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'wip')"
     strategy:
       fail-fast: true
       matrix:
-        php: [8.0,8.1]
-        laravel: [8.*]
+        php: [8.1]
+        laravel: [9.*]
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
 
@@ -35,8 +36,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:^6.0" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
           composer update --prefer-dist --no-interaction
 
       - name: Execute tests
+        env:
+          SAFEBROWSING_GOOGLE_API_KEY: ${{ secrets.SAFEBROWSING_GOOGLE_API_KEY }}
         run: vendor/bin/pest
