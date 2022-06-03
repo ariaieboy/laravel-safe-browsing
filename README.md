@@ -34,7 +34,7 @@ composer require ariaieboy/laravel-safe-browsing
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --tag="laravel-safe-browsing"
+php artisan vendor:publish --tag="safe-browsing-config"
 ```
 
 This is the contents of the published config file:
