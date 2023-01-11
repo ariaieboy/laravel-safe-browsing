@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-safe-browsing` will be documented in this file.
 
+## 1.1.1 - 2023-01-11
+
+add laravel 10
+
 ## 1.1.0 - 2022-09-13
 
 add php 8.2 support
