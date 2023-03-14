@@ -42,6 +42,7 @@ This is the contents of the published config file:
 ```php
 return [
     'google'=>[
+        'api_domain'=>env('SAFEBROWSING_GOOGLE_API_DOMAIN','https://safebrowsing.googleapis.com/'),
         'api_key'=>env('SAFEBROWSING_GOOGLE_API_KEY',null),
         'timeout'=>30,
         'threatTypes' => [
