@@ -93,7 +93,8 @@ class LaravelSafeBrowsing
      */
     protected function getApiResult(string $url): array|string
     {
-        $lookupUrl = sprintf("https://safebrowsing.googleapis.com/v4/threatMatches:find?key=%s", $this->apiKey);
+        $apiDomain = config('laravel-safe-browsing.google.api_domain','https://safebrowsing.googleapis.com/');
+        $lookupUrl = sprintf($apiDomain."v4/threatMatches:find?key=%s", $this->apiKey);
         $lookupData = [
             'client' => [
                 'clientId' => $this->clientId,
