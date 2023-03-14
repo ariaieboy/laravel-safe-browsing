@@ -22,7 +22,7 @@
         "spatie/laravel-package-tools": "^1.13.5"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^5.7",
+        "graham-campbell/testbench": "^5.7|^6.0",
         "nunomaduro/larastan": "^1.0",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.2",
