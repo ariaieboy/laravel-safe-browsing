@@ -13,18 +13,18 @@ class TestCase extends AbstractPackageTestCase
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Ariaieboy\\LaravelSafeBrowsing\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn(string $modelName) => 'Ariaieboy\\LaravelSafeBrowsing\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             LaravelSafeBrowsingServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
 
