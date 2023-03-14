@@ -23,7 +23,7 @@
     },
     "require-dev": {
         "graham-campbell/testbench": "^5.7|^6.0",
-        "nunomaduro/larastan": "^1.0",
+        "nunomaduro/larastan": "^1.0|^2.5",
         "pestphp/pest": "^1.21",
         "pestphp/pest-plugin-laravel": "^1.2",
         "phpstan/extension-installer": "^1.1",
