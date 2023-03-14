@@ -13,7 +13,7 @@ class TestCase extends AbstractPackageTestCase
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'Ariaieboy\\LaravelSafeBrowsing\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Ariaieboy\\LaravelSafeBrowsing\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
