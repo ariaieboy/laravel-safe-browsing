@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-safe-browsing` will be documented in this file.
 
+## 1.2.2 - 2023-10-19
+
+**Full Changelog**: https://github.com/ariaieboy/laravel-safe-browsing/compare/1.2.1...1.2.2
+
 ## 1.2.1 - 2023-03-14
 
 fix tests
