@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-safe-browsing` will be documented in this file.
 
+## 1.4.0 - 2024-10-19
+
+- remove laravel 9 support since it's EOL
+- upgrade pest to v2
+- add PHP 8.4
+
+**Full Changelog**: https://github.com/ariaieboy/laravel-safe-browsing/compare/1.3.0...1.4.0
+
 ## 1.3.0 - 2024-03-01
 
 - add laravel 11 to composer.json
