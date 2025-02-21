@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-safe-browsing` will be documented in this file.
 
+## 1.5.0 - 2025-02-21
+
+### What's Changed
+
+* add laravel 12 support by @ariaieboy in https://github.com/ariaieboy/laravel-safe-browsing/pull/5
+
+### New Contributors
+
+* @ariaieboy made their first contribution in https://github.com/ariaieboy/laravel-safe-browsing/pull/5
+
+**Full Changelog**: https://github.com/ariaieboy/laravel-safe-browsing/compare/1.4.0...1.5.0
+
 ## 1.4.0 - 2024-10-19
 
 - remove laravel 9 support since it's EOL
